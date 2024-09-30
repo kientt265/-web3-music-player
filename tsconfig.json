@@ -1,0 +1,16 @@
+{
+  "files": [],
+  "references": [
+    { "path": "./tsconfig.app.json" },
+    { "path": "./tsconfig.node.json" }
+  ],
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+    "allowJs": true, // Cho phép TypeScript xử lý file .js và .jsx
+    "checkJs": false, // Không kiểm tra các lỗi của file .js/.jsx
+    "jsx": "react" // Hoặc "react-jsx" nếu dùng React 17 trở lên
+  }
+}
