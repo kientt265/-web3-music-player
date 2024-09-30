@@ -9,6 +9,7 @@ import { WagmiAdapter } from '@reown/appkit-adapter-wagmi';
 import { sepolia, arbitrum } from '@reown/appkit/networks';
 import ConnectMetaMask from './components/ui/ConnectMetaMask';
 import { useAppKit } from '@reown/appkit/react'
+import Player from './components/ui/Player';
 const queryClient = new QueryClient();
 
 interface AppKitProviderProps {
@@ -61,9 +62,9 @@ function App() {
   return (
     <div className='h-screen bg-black'>
       <div className='h-[90%] flex'>
-        <Sidebar />
-        <w3m-button/>
+        <Sidebar/>
       </div>
+      <Player/>
     </div>
   )
 }
