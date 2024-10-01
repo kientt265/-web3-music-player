@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import { Button } from './components/ui/button'
 import Sidebar from './components/ui/Sidebar'
 import { createAppKit } from '@reown/appkit/react';
@@ -11,6 +11,7 @@ import ConnectMetaMask from './components/ui/ConnectMetaMask';
 import { useAppKit } from '@reown/appkit/react'
 import Player from './components/ui/Player';
 import Display from './components/ui/Display';
+import { PlayerContext } from './context/PlayerContext';
 const queryClient = new QueryClient();
 
 interface AppKitProviderProps {
@@ -60,6 +61,9 @@ export function AppKitProvider({ children }: AppKitProviderProps) {
 }
 
 function App() {
+
+  const {audioRef, track} = useContext(PlayerContext)
+
   return (
     <div className='h-screen bg-black'>
       <div className='h-[90%] flex'>
@@ -67,6 +71,7 @@ function App() {
         <Display/>
       </div>
       <Player/> 
+      <audio ref={audioRef} src={track.file} preload='auto'></audio>
     </div>
   )
 }
