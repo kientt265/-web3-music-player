@@ -10,6 +10,7 @@ import { sepolia, arbitrum } from '@reown/appkit/networks';
 import ConnectMetaMask from './components/ui/ConnectMetaMask';
 import { useAppKit } from '@reown/appkit/react'
 import Player from './components/ui/Player';
+import Display from './components/ui/Display';
 const queryClient = new QueryClient();
 
 interface AppKitProviderProps {
@@ -63,8 +64,9 @@ function App() {
     <div className='h-screen bg-black'>
       <div className='h-[90%] flex'>
         <Sidebar/>
+        <Display/>
       </div>
-      <Player/>
+      <Player/> 
     </div>
   )
 }
